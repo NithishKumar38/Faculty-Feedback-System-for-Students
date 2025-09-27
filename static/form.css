@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Style for the header container */
+.header {
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the h1 inside the header */
+  .header h1 {
+    font-size: 2.2rem;
+    color: #cef0f8;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style for the paragraph inside the header */
+  .header p {
+    color: #b3edf8;
+    font-family: 'Poppins', sans-serif;
+  }
+
+body {
+    background: linear-gradient(-45deg, #9bc5ee, #5f8fdc, #61d0e9, #23d5ab);
+    animation: gradient 25s ease infinite;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 25px;
+    background: #4481eb ;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #4481eb;
+}
+
+h1 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 32px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    color: #f8f9fa;
+    font-size: 18px;
+}
+
+.welcome-banner {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    animation: slideIn 0.6s ease 0.3s both;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.welcome-banner h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.welcome-banner p {
+    color: #7f8c8d;
+}
+
+.faculty-details {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.faculty-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #3498db;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.faculty-image:hover {
+    transform: scale(1.05);
+}
+
+.faculty-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.faculty-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.faculty-name {
+    font-size: 26px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.faculty-department {
+    font-size: 18px;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, #fad0c4, #ff9a9e);
+    box-shadow: 0 2px 5px rgba(169, 16, 16, 0.2);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+tr:hover {
+    background-color: #f5f9ff;
+}
+
+.rating-options {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.rating-options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.rating-options label:hover {
+    background-color: #e3f2fd;
+}
+
+.rating-options input[type="radio"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.rating-options input[type="radio"]:checked + label {
+    font-weight: bold;
+    color: #2980b9;
+}
+
+.question-number {
+    font-weight: bold;
+    width: 40px;
+    color: #3498db;
+}
+
+.next-btn {
+    width: 150px;
+    background-color: #d3d3d3;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px auto; /* Changed from 10px 0 to 10px auto */
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    box-shadow: 2px 4px 10px rgba(169, 16, 16, 0.2);
+    background: linear-gradient(-45deg, #77ed28, #2ad844, #037905);
+    background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+    display: block; /* Add this line */
+}
+
+.next-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
+}
+
+.next-btn:active {
+    transform: translateY(1px);
+}
+
+.additional-comments {
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.additional-comments textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 150px;
+    resize: vertical;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.additional-comments textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.additional-comments h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.motivational-message {
+    text-align: center;
+    padding: 15px;
+    background-color: #e3f2fd;
+    border-radius: 10px;
+    color: #2980b9;
+    font-style: italic;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Radio Button Styling */
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #bbb;
+    border-radius: 50%;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+input[type="radio"]:checked {
+    border-color: #3498db;
+    background-color: #3498db;
+    box-shadow: inset 0 0 0 4px #fff;
+}
+
+/* Animations for questions */
+tbody tr {
+    animation: fadeInQuestion 0.5s ease;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInQuestion {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+tbody tr:nth-child(1) { animation-delay: 0.1s; }
+tbody tr:nth-child(2) { animation-delay: 0.15s; }
+tbody tr:nth-child(3) { animation-delay: 0.2s; }
+tbody tr:nth-child(4) { animation-delay: 0.25s; }
+tbody tr:nth-child(5) { animation-delay: 0.3s; }
+/* ... and so on for remaining rows */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    .faculty-details {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .faculty-image {
+        margin: 0 auto;
+    }
+    
+    th, td {
+        padding: 10px 5px;
+        font-size: 14px;
+    }
+    
+    .rating-options {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .rating-options label {
+        padding: 8px 4px;
+    }
+    
+    .next-btn {
+        width: 100%;
+    }
+}

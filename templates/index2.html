@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Feedback System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+    <form action="{{ url_for('submit') }}" method="post">
+    <div class="container">
+        <header class="header">
+            <h1>Faculty Feedback System</h1>
+            <p>Your input helps us improve our teaching quality</p>
+        </header>
+        
+        <div class="welcome-banner">
+            <h2>Welcome, <span id="studentName">Logambika</span>!</h2>
+            <p>Thank you for taking the time to provide feedback on our faculty members. Your honest opinions help us enhance the learning experience.</p>
+        </div>
+        
+        <div class="faculty-list-container">
+            <h2>Faculty Members</h2>
+            <div class="faculty-grid">
+                <div class="faculty-card" data-faculty-id="1">
+                    <div class="faculty-image">
+                        <img src="https://via.placeholder.com/150" alt="Ms. S.S. Jaya">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Ms. S.S. Jaya</h3>
+                        <p>Computer Science Department</p>
+                        <button class="review-btn"><a href="forms">Review</a></button>
+                    </div>
+                </div>
+                
+                <div class="faculty-card" data-faculty-id="2">
+                    <div class="faculty-image">
+                        <img src="https://via.placeholder.com/150" alt="Mr. K. Pradeep">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Mr. K. Pradeep</h3>
+                        <p>Computer Science Department</p>
+                        <button class="review-btn"><a href="forms">Review</a></button>
+                    </div>
+                </div>
+                
+                <div class="faculty-card" data-faculty-id="3">
+                    <div class="faculty-image">
+                        <img src="https://via.placeholder.com/150" alt="Ms. R. Thenmalar">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Ms. R. Thenmalar</h3>
+                        <p>Computer Science Department</p>
+                        <button class="review-btn"><a href="forms">Review</a></button>
+                    </div>
+                </div>
+                
+                <div class="faculty-card" data-faculty-id="4">
+                    <div class="faculty-image">
+                        <img src="https://via.placeholder.com/150" alt="Ms. S. Anuba">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Ms. S. Anuba</h3>
+                        <p>Computer Science Department</p>
+                        <button class="review-btn"><a href="forms">Review</a></button>
+                    </div>
+                </div>
+                
+                <div class="faculty-card" data-faculty-id="5">
+                    <div class="faculty-image">
+                        <img src="https://via.placeholder.com/150" alt="Mrs. G. Pavithra">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>Mrs. G. Pavithra</h3>
+                        <p>Computer Science Department</p>
+                        <button class="review-btn"><a href="forms">Review</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="progress-section">
+            <h3>Your Feedback Progress</h3>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="overallProgress"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="completedCount">0</span> out of <span id="totalCount">5</span> faculty reviews completed
+                </div>
+            </div>
+            <button id="submitAllButton" class="submit-all-btn" type="submit" >Submit All Feedback</button>
+        </div>
+    </div>
+    
+</form>
+</body>
+</html>

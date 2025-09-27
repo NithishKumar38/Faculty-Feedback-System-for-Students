@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Feedback System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashbord1.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Faculty Feedback System</h1>
+            <p>Your input helps us improve our teaching quality</p>
+        </header>
+        
+        <div class="welcome-banner">
+            <h2>Welcome, <span id="studentName">{{ name }}</span>!</h2>
+            <p>Department: {{ department | upper }} | Year: {{ year }}</p>
+            <p>Thank you for taking the time to provide feedback on our faculty members. Please complete the reviews in order.</p>
+        </div>
+       
+        <div class="faculty-list-container">
+            <h2>Faculty Members</h2>
+            <div class="faculty-grid">
+                {% for faculty in faculty_list %}
+                <div class="faculty-card" data-faculty-id="{{ faculty.id }}">
+                    <div class="faculty-image">
+                        <img src="{{ url_for('static', filename=faculty.image) }}" alt="{{ faculty.name }}">
+                    </div>
+                    <div class="faculty-info">
+                        <h3>{{ faculty.name }}</h3>
+                        <p>{{ faculty.course }}</p>
+                        <button class="review-btn" onclick="location.href='{{ url_for(facultyId=faculty.id) }}'">Review</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <div class="progress-section">
+            <h3>Your Feedback Progress</h3>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="overallProgress"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="completedCount">0</span> out of <span id="totalCount">{{ faculty_list|length }}</span> faculty reviews completed
+                </div>
+            </div>
+            <form action="{{ url_for('submit') }}" method="post">
+                <button id="submitAllButton" class="submit-all-btn" disabled>Submit All Feedback</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='dashbord1.js') }}"></script>
+</body>
+</html>

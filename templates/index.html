@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='indexx.css') }}" />
+    <title>Feedback Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form method="post" class="sign-in-form">
+            <h2 class="title">Student</h2>
+            <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input 
+                  type="text"
+                  name = "username" 
+                  id="twelveDigitInput" 
+                  pattern="[0-9]{12}" 
+                  maxlength="12" 
+                  data-validate="Must be exactly 12 digits"
+                  placeholder="Enter Register Number"
+                  required>
+                <div id="validationIcon" class="validation-icon"></div>
+              </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input name="password" type="password" placeholder="dd.mm.yyyy"/>
+            </div>
+            <input type="submit" value="Login" onclick="checkUser(); document.getElementById('twelveDigitInput').focus();" class="btn solid" />
+  
+            
+          </form>
+          <form action="#" class="sign-up-form">
+            <h2 class="title">Admin</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+           
+            <div class="password-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="passwordField" placeholder="Password" />
+              <div class="password-toggle" onclick="togglePassword()">
+                <i class="fas fa-eye" id="toggleIcon"></i>
+              </div>
+            </div>
+            <input type="submit" class="btn" value="Login" />
+            
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Are you Admin ?</h3>
+            <p></p>
+            <button class="shrink-border" id="sign-up-btn">
+              Click Here
+            </button>
+          </div>
+          <img src="{{ url_for('static', filename='img/log.svg') }}" class="image" alt="" />
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>Are you Student ?</h3>
+            <p>
+            </p>
+            <button class="shrink-border" id="sign-in-btn">
+              Click Here
+            </button>
+          </div>
+          <img src="{{ url_for('static', filename='img/register.svg') }} "class="image" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>

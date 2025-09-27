@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='s.css') }}">
+</head>
+<body>
+    <div class="header">
+        <img src="left-logo.png" alt="Left Logo">
+        <h1>RVS College of Engineering and Technology</h1>
+        <img src="right-logo.png" alt="Right Logo">
+    </div>
+    <div class="container">
+        <h2>Student Feedback</h2>
+        <select id="department">
+            <option value="">Select Department</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="MECH">MECH</option>
+        </select>
+        <select id="year" onchange="updateSemesters()">
+            <option value="">Select Year</option>
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+            <option value="4">4th Year</option>
+        </select>
+        <select id="semester">
+            <option value="">Select Semester</option>
+        </select>
+        <button onclick="filterStaff()">Show Staff</button>
+        
+    </div>
+    <div id="staffContainer"></div>
+    <script>
+        function updateSemesters() {
+            let year = document.getElementById('year').value;
+            let semesterSelect = document.getElementById('semester');
+            semesterSelect.innerHTML = "";
+            let semesters = {
+                "1": ["1st Semester", "2nd Semester"],
+                "2": ["3rd Semester", "4th Semester"],
+                "3": ["5th Semester", "6th Semester"],
+                "4": ["7th Semester", "8th Semester"]
+            };
+            if (year in semesters) {
+                semesters[year].forEach(sem => {
+                    let option = document.createElement("option");
+                    option.text = sem;
+                    option.value = sem;
+                    semesterSelect.add(option);
+                });
+            }
+        }
+        function filterStaff() {
+            const department = document.getElementById("department").value;
+            const year = document.getElementById("year").value;
+            const staffContainer = document.getElementById("staffContainer");
+            staffContainer.innerHTML = "";
+            const staffData = {
+                CSE: {
+                    3: [{ name: "Jaya Mam", subject: "Cloud Computing", img: "profile-placeholder.png" }],
+                    4: [{ name: "Theanmalar Mam", subject: "Network Security", img: "profile-placeholder.png" }]
+                },
+                ECE: {
+                    3: [{ name: "Ravi Sir", subject: "VLSI Design", img: "profile-placeholder.png" }],
+                    4: [{ name: "Kumar Sir", subject: "Embedded Systems", img: "profile-placeholder.png" }]
+                }
+            };
+            if (staffData[department] && staffData[department][year]) {
+                staffData[department][year].forEach(staff => {
+                    const staffCard = document.createElement("div");
+                    staffCard.className = "staff-card";
+                    staffCard.innerHTML = `
+                        <img src="${staff.img}" alt="Profile">
+                        <div class="staff-info">
+                            <strong>${staff.name}</strong>
+                            <p>${staff.subject}</p>
+                            <button class="review-btn">Review</button>
+                            <button class="close-btn">X</button>
+                                <div class="modal" id="reviewModal">
+        <h3>Review</h3>
+        <form id="reviewForm" method="POST">
+            
+            <label>1. How do you rate this staff?</label>
+            <div class="options">
+                <input type="radio" name="1" value="Excellent"> Excellent
+                <input type="radio" name="1" value="Good"> Good
+                <input type="radio" name="1" value="Average"> Average
+                <input type="radio" name="1" value="Poor"> Poor
+            </div>
+
+            <label>2. Is the faculty interactive?</label>
+            <div class="options">
+                <input type="radio" name="2" value="Yes"> Yes
+                <input type="radio" name="2" value="No"> No
+            </div>
+
+            <label>3. Did you understand the topics well?</label>
+            <div class="options">
+                <input type="radio" name="3" value="Yes"> Yes
+                <input type="radio" name="3" value="No"> No
+            </div>
+
+            <button type="button" class="save-btn" onclick="saveReview()">Save</button>
+            <button type="button" class="close-modal-btn" onclick="closeModal()">Close</button>
+        </form>
+    </div>
+                        </div>
+                    `;
+                    staffContainer.appendChild(staffCard);
+                });
+            } else {
+                staffContainer.innerHTML = "<p>No staff found for the selected criteria.</p>";
+            }
+        }
+
+        let reviews = [];
+        let currentCard;
+        let completedReviews = 0;
+        const totalReviews = document.querySelectorAll('.staff-card').length;
+        const scriptURL = "Yhttps://script.google.com/macros/s/AKfycby3x-nI33OBHvJjNUz6GmGJe2dHEvvQ0s894qrahwKgfQ9gepfNra35SCIBRX3BdoJg/exec"; // Replace with your Google Apps Script Web App URL
+    
+        document.querySelectorAll('.review-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                currentCard = this.closest('.staff-card');
+                document.getElementById('reviewModal').style.display = 'block';
+            });
+        });
+    
+        function saveReview() {
+            let form = document.getElementById('reviewForm');
+            let staffName = currentCard.getAttribute("data-name");
+    
+            // Get selected radio button values
+            let rating = document.querySelector('input[name="1"]:checked')?.value;
+            let interactive = document.querySelector('input[name="2"]:checked')?.value;
+            let understanding = document.querySelector('input[name="3"]:checked')?.value;
+    
+            if (!rating || !interactive || !understanding) {
+                alert("Please answer all questions before saving.");
+                return;
+            }
+    
+            // Save review data in the array
+            reviews.push({
+                staff: staffName,
+                rating: rating,
+                interactive: interactive,
+                understanding: understanding
+            });
+    
+            closeModal();
+    
+            // Mark review as completed
+            let closeButton = currentCard.querySelector('.close-btn');
+            closeButton.style.background = 'green';
+            closeButton.textContent = '✔';
+            closeButton.disabled = true;
+            completedReviews++;
+    
+            // Show submit button when all reviews are completed
+            if (completedReviews === totalReviews) {
+                document.getElementById('submitAll').style.display = 'block';
+            }
+        }
+    
+        function submitReviews() {
+            if (reviews.length === 0) {
+                alert("No reviews to submit.");
+                return;
+            }
+    
+            // Send data to Google Apps Script
+            fetch(scriptURL, {
+                method: 'POST',
+                body: JSON.stringify(reviews),
+                headers: { 'Content-Type': 'application/json' }
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert("Reviews submitted successfully!");
+                console.log(data);
+            })
+            .catch(error => {
+                alert("Error submitting reviews.");
+                console.error("Error:", error);
+            });
+        }
+    
+        function closeModal() {
+            document.getElementById('reviewModal').style.display = 'none';
+        }
+    
+        // Attach submit function to button
+        document.getElementById("submitAll").addEventListener("click", submitReviews);
+    </script>
+</body>
+</html>

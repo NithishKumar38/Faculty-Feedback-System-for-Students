@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header img {
+            height: 50px;
+        }
+        .header h1 {
+            flex-grow: 1;
+            text-align: center;
+            margin: 0;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .staff-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            background: #fff;
+        }
+        .staff-info {
+            flex-grow: 1;
+            padding-left: 10px;
+        }
+        .staff-card img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+        }
+        .close-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .review-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: left;
+            width: 60%;
+            max-height: 85%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 5px solid #28a745;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        .modal label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        .modal .options {
+            margin-top: 5px;
+        }
+        .modal .options input {
+            margin-right: 5px;
+        }
+        .modal button {
+            margin-top: 15px;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .save-btn {
+            background: #28a745;
+            color: white;
+        }
+        .close-modal-btn {
+            background: #dc3545;
+            color: white;
+        }
+        #submitAll {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form action="{{ url_for('submit') }}" method="post">
+    <div class="header">
+        <img src="left-logo.png" alt="Left Logo">
+        <h1>RVS College of Engineering and Technology</h1>
+        <img src="right-logo.png" alt="Right Logo">
+    </div>
+    <div class="container">
+        <h2>Staff Details</h2>
+        <div class="staff-card" data-name="Jaya Mam">
+            <img src="profile-placeholder.png" alt="Profile">
+            <div class="staff-info">
+                <strong>Jaya Mam</strong>
+                <p>Cloud Computing</p>
+                <a href="forms">Review</a>
+            </div>
+            <button class="close-btn">X</button>
+        </div>
+        <div class="staff-card" data-name="Anuba Mam">
+            <img src="profile-placeholder.png" alt="Profile">
+            <div class="staff-info">
+                <strong>Anuba Mam</strong>
+                <p>Big Data Analytics</p>
+                <a href="forms">Review</a>
+            </div>
+            <button class="close-btn">X</button>
+        </div>
+        <div class="staff-card" data-name="Pradeepa Teamalar Mam">
+            <img src="profile-placeholder.png" alt="Profile">
+            <div class="staff-info">
+                <strong>Theanmalar Mam</strong>
+                <p>Network Security</p>
+                <a href="forms">Review</a>
+            </div>
+            <button class="close-btn">X</button>
+        </div>
+    </div>
+    <button type="submit">submit</button>
+</form>
+</body>
+</html>

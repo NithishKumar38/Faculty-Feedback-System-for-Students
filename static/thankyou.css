@@ -1,0 +1,203 @@
+@keyframes cardGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 182, 193, 0.4), 
+                    0 0 20px rgba(255, 105, 180, 0.3), 
+                    0 0 30px rgba(255, 20, 147, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 105, 180, 0.6), 
+                    0 0 40px rgba(255, 20, 147, 0.4), 
+                    0 0 60px rgba(255, 0, 128, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 182, 193, 0.4), 
+                    0 0 20px rgba(255, 105, 180, 0.3), 
+                    0 0 30px rgba(255, 20, 147, 0.2);
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #a7c1e2, #b1b1fa);
+    font-family: Arial, sans-serif;
+}
+
+.thank-you-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    max-width: 1000px;
+    max-height: 500px;
+    height: 95%;
+    width: 95%;
+    position: relative;
+    animation: cardGlow 3s ease-in-out infinite;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 0 10px rgba(128, 196, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.email-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.thank-you-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.thank-you-text {
+    color: #666;
+    line-height: 1.6;
+}
+
+.team-credits {
+    margin-top: 20px;
+    width: 80%;
+    background: linear-gradient(45deg, #f0f4fc, #e6e9f0, #d1d9e6);
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.1),
+        inset 0 0 15px rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-credits::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    animation: shine 5s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.team-credits h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 20px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team-credits h3::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+
+.team-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.team-role {
+    text-align: left;
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.team-role:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-role strong {
+    color: #2575fc;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team-role p {
+    color: #333;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.team-member p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.linkedin-icon {
+    color: #0A66C2;
+    margin-left: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.linkedin-icon:hover {
+    color: #004182;
+    transform: scale(1.2);
+}
+
+.team-role .team-member p {
+    position: relative;
+    padding-right: 30px;
+}
+
+#teamname1 {
+    font-size: 25px;
+    color: #300360;
+}

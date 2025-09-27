@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 2px solid #ddd;
+        }
+        .feedback-box {
+            background: #fff;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            position: relative;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+        .profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            color: red;
+        }
+        .question {
+            margin: 10px 0;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>RVS College of Engineering and Technology</h2>
+        </div>
+        <h3>Feedback</h3>
+        <form method="post">
+        <div class="feedback-box">
+            <span class="close-btn">&times;</span>
+            <div class="profile">
+                <img src="profile.png" alt="Profile">
+                <div>
+                    <h4>S.S. JAYA</h4>
+                    <p>Cloud Computing</p>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question">
+                    <label for="q1">1. How satisfied are you with your current role?</label>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="Excellent" required> Excellent</label>
+                        <label><input type="radio" name="q1" value="Very Good"> Very Good</label>
+                        <label><input type="radio" name="q1" value="Good"> Good</label>
+                        <label><input type="radio" name="q1" value="Poor"> Poor</label>
+                        <label><input type="radio" name="q1" value="Very Poor"> Very Poor</label>
+                    </div>
+                </div>
+    
+                <div class="question">
+                    <label for="q2">2. Do you feel that your work is valued?</label>
+                    <div class="options">
+                        <label><input type="radio" name="q2" value="Excellent" required> Excellent</label>
+                        <label><input type="radio" name="q2" value="Very Good"> Very Good</label>
+                        <label><input type="radio" name="q2" value="Good"> Good</label>
+                        <label><input type="radio" name="q2" value="Poor"> Poor</label>
+                        <label><input type="radio" name="q2" value="Very Poor"> Very Poor</label>
+                    </div>
+                </div>
+    
+                <div class="question">
+                    <label for="q3">3. How would you rate the communication within the team?</label>
+                    <div class="options">
+                        <label><input type="radio" name="q3" value="Excellent" required> Excellent</label>
+                        <label><input type="radio" name="q3" value="Very Good"> Very Good</label>
+                        <label><input type="radio" name="q3" value="Good"> Good</label>
+                        <label><input type="radio" name="q3" value="Poor"> Poor</label>
+                        <label><input type="radio" name="q3" value="Very Poor"> Very Poor</label>
+                    </div>
+                </div>
+    
+                <div class="question">
+                    <label for="q4">4. How do you find the work-life balance in your role?</label>
+                    <div class="options">
+                        <label><input type="radio" name="q4" value="Excellent" required> Excellent</label>
+                        <label><input type="radio" name="q4" value="Very Good"> Very Good</label>
+                        <label><input type="radio" name="q4" value="Good"> Good</label>
+                        <label><input type="radio" name="q4" value="Poor"> Poor</label>
+                        <label><input type="radio" name="q4" value="Very Poor"> Very Poor</label>
+                    </div>
+                </div>
+    
+                <div class="question">
+                    <label for="q5">5. Do you feel supported by your manager?</label>
+                    <div class="options">
+                        <label><input type="radio" name="q5" value="Excellent" required> Excellent</label>
+                        <label><input type="radio" name="q5" value="Very Good"> Very Good</label>
+                        <label><input type="radio" name="q5" value="Good"> Good</label>
+                        <label><input type="radio" name="q5" value="Poor"> Poor</label>
+                        <label><input type="radio" name="q5" value="Very Poor"> Very Poor</label>
+                    </div>
+                </div>
+    
+                <div class="question">
+                    <label for="q6">6. Do you receive enough feedback on your performance?</label>
+                    <div class="options">
+                        <label><input type="radio" name="q6" value="Excellent" required> Excellent</label>
+                        <label><input type="radio" name="q6" value="Very Good"> Very Good</label>
+                        <label><input type="radio" name="q6" value="Good"> Good</label>
+                        <label><input type="radio" name="q6" value="Poor"> Poor</label>
+                        <label><input type="radio" name="q6" value="Very Poor"> Very Poor</label>
+                    </div>
+                </div>
+    
+                <div class="question">
+                    <label for="q7">7. Do you feel there are opportunities for career growth?</label>
+                    <div class="options">
+                        <label><input type="radio" name="q7" value="Excellent" required> Excellent</label>
+                        <label><input type="radio" name="q7" value="Very Good"> Very Good</label>
+                        <label><input type="radio" name="q7" value="Good"> Good</label>
+                        <label><input type="radio" name="q7" value="Poor"> Poor</label>
+                        <label><input type="radio" name="q7" value="Very Poor"> Very Poor</label>
+                    </div>
+                </div>
+    
+                <div class="question">
+                    <label for="q8">8. How do you rate the team collaboration?</label>
+                    <div class="options">
+                        <label><input type="radio" name="q8" value="Excellent" required> Excellent</label>
+                        <label><input type="radio" name="q8" value="Very Good"> Very Good</label>
+                        <label><input type="radio" name="q8" value="Good"> Good</label>
+                        <label><input type="radio" name="q8" value="Poor"> Poor</label>
+                        <label><input type="radio" name="q8" value="Very Poor"> Very Poor</label>
+                    </div>
+                </div>
+    
+                <div class="question">
+                    <label for="q9">9. How satisfied are you with the work environment?</label>
+                    <div class="options">
+                        <label><input type="radio" name="q9" value="Excellent" required> Excellent</label>
+                        <label><input type="radio" name="q9" value="Very Good"> Very Good</label>
+                        <label><input type="radio" name="q9" value="Good"> Good</label>
+                        <label><input type="radio" name="q9" value="Poor"> Poor</label>
+                        <label><input type="radio" name="q9" value="Very Poor"> Very Poor</label>
+                    </div>
+                </div>
+    
+                <div class="question">
+                    <label for="q10">10. Do you feel your contributions are recognized?</label>
+                    <div class="options">
+                        <label><input type="radio" name="q10" value="Excellent" required> Excellent</label>
+                        <label><input type="radio" name="q10" value="Very Good"> Very Good</label>
+                        <label><input type="radio" name="q10" value="Good"> Good</label>
+                        <label><input type="radio" name="q10" value="Poor"> Poor</label>
+                        <label><input type="radio" name="q10" value="Very Poor"> Very Poor</label>
+                    </div>
+                </div>
+    
+        </div>
+
+        <div class="feedback-box">
+            <span class="close-btn">&times;</span>
+            <div class="profile">
+                <img src="profile.png" alt="Profile">
+                <div>
+                    <h4>S. ANUBA</h4>
+                    <p>Big Data Analytics</p>
+                </div>
+            </div>
+            <div class="question">
+                <label for="q11">1. How satisfied are you with your current role?</label>
+                <div class="options">
+                    <label><input type="radio" name="q11" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q11" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q11" value="Good"> Good</label>
+                    <label><input type="radio" name="q11" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q11" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q12">2. Do you feel that your work is valued?</label>
+                <div class="options">
+                    <label><input type="radio" name="q12" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q12" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q12" value="Good"> Good</label>
+                    <label><input type="radio" name="q12" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q12" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q13">3. How would you rate the communication within the team?</label>
+                <div class="options">
+                    <label><input type="radio" name="q13" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q13" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q13" value="Good"> Good</label>
+                    <label><input type="radio" name="q13" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q13" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q14">4. How do you find the work-life balance in your role?</label>
+                <div class="options">
+                    <label><input type="radio" name="q14" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q14" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q14" value="Good"> Good</label>
+                    <label><input type="radio" name="q14" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q14" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q15">5. Do you feel supported by your manager?</label>
+                <div class="options">
+                    <label><input type="radio" name="q15" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q15" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q15" value="Good"> Good</label>
+                    <label><input type="radio" name="q15" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q15" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q16">6. Do you receive enough feedback on your performance?</label>
+                <div class="options">
+                    <label><input type="radio" name="q16" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q16" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q16" value="Good"> Good</label>
+                    <label><input type="radio" name="q16" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q16" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q17">7. Do you feel there are opportunities for career growth?</label>
+                <div class="options">
+                    <label><input type="radio" name="q17" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q17" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q17" value="Good"> Good</label>
+                    <label><input type="radio" name="q17" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q17" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q18">8. How do you rate the team collaboration?</label>
+                <div class="options">
+                    <label><input type="radio" name="q18" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q18" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q18" value="Good"> Good</label>
+                    <label><input type="radio" name="q18" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q18" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q19">9. How satisfied are you with the work environment?</label>
+                <div class="options">
+                    <label><input type="radio" name="q19" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q19" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q19" value="Good"> Good</label>
+                    <label><input type="radio" name="q19" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q19" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q20">10. Do you feel your contributions are recognized?</label>
+                <div class="options">
+                    <label><input type="radio" name="q20" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q20" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q20" value="Good"> Good</label>
+                    <label><input type="radio" name="q20" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q20" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="feedback-box">
+            <span class="close-btn">&times;</span>
+            <div class="profile">
+                <img src="profile.png" alt="Profile">
+                <div>
+                    <h4>R. THENMALAR</h4>
+                    <p>Big Data Analytics</p>
+                </div>
+            </div>
+            <div class="question">
+                <label for="q21">1. How satisfied are you with your current role?</label>
+                <div class="options">
+                    <label><input type="radio" name="q21" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q21" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q21" value="Good"> Good</label>
+                    <label><input type="radio" name="q21" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q21" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q22">2. Do you feel that your work is valued?</label>
+                <div class="options">
+                    <label><input type="radio" name="q22" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q22" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q22" value="Good"> Good</label>
+                    <label><input type="radio" name="q22" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q22" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q23">3. How would you rate the communication within the team?</label>
+                <div class="options">
+                    <label><input type="radio" name="q23" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q23" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q23" value="Good"> Good</label>
+                    <label><input type="radio" name="q23" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q23" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q24">4. How do you find the work-life balance in your role?</label>
+                <div class="options">
+                    <label><input type="radio" name="q24" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q24" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q24" value="Good"> Good</label>
+                    <label><input type="radio" name="q24" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q24" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q25">5. Do you feel supported by your manager?</label>
+                <div class="options">
+                    <label><input type="radio" name="q25" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q25" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q25" value="Good"> Good</label>
+                    <label><input type="radio" name="q25" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q25" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q26">6. Do you receive enough feedback on your performance?</label>
+                <div class="options">
+                    <label><input type="radio" name="q26" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q26" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q26" value="Good"> Good</label>
+                    <label><input type="radio" name="q26" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q26" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q27">7. Do you feel there are opportunities for career growth?</label>
+                <div class="options">
+                    <label><input type="radio" name="q27" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q27" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q27" value="Good"> Good</label>
+                    <label><input type="radio" name="q27" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q27" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q28">8. How do you rate the team collaboration?</label>
+                <div class="options">
+                    <label><input type="radio" name="q28" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q28" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q28" value="Good"> Good</label>
+                    <label><input type="radio" name="q28" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q28" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q29">9. How satisfied are you with the work environment?</label>
+                <div class="options">
+                    <label><input type="radio" name="q29" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q29" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q29" value="Good"> Good</label>
+                    <label><input type="radio" name="q29" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q29" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q30">10. Do you feel your contributions are recognized?</label>
+                <div class="options">
+                    <label><input type="radio" name="q30" value="Excellent" required> Excellent</label>
+                    <label><input type="radio" name="q30" value="Very Good"> Very Good</label>
+                    <label><input type="radio" name="q30" value="Good"> Good</label>
+                    <label><input type="radio" name="q30" value="Poor"> Poor</label>
+                    <label><input type="radio" name="q30" value="Very Poor"> Very Poor</label>
+                </div>
+            </div>
+
+        </div>
+        
+        <button class="submit-btn">Submit</button>
+    </form>
+    </div>
+</body>
+</html>

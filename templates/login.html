@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">Logo</div>
+        <div class="title">College Name and Address Details</div>
+        <div class="logo">Logo</div>
+    </div>
+
+    <div class="login-container">
+        <h2>Student Login</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <p class="flash {{ category }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <label>Register Number:</label>
+            <input type="text" name="username" required><br>
+            
+            <label>Password:</label>
+            <input type="password" name="password" required><br>
+
+            <a href="#" class="forgot">Forgot password?</a><br>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+</body>
+</html>
