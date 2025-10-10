@@ -24,6 +24,9 @@ A web-based **Faculty Feedback System** built using **Flask**. This project allo
 * **Cloud Integration:** Google Sheets API (`gspread`)
 * **Frontend:** HTML, Jinja2 Templates, Bootstrap
 
+
+  https://github.com/user-attachments/assets/f1725a14-8ac3-4ef1-9700-10a3ea858a3d
+
 ---
 
 ## ⚙️ Installation
@@ -75,6 +78,7 @@ A web-based **Faculty Feedback System** built using **Flask**. This project allo
 
 ---
 
+
 ## 📂 Project Structure
 
 ```
@@ -91,3 +95,20 @@ A web-based **Faculty Feedback System** built using **Flask**. This project allo
 
 
 👉 Do you want me to also generate a **requirements.txt** file (with all the dependencies from your code) so your README setup becomes complete?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
