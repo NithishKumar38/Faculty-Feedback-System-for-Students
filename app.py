@@ -6,13 +6,13 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 # Google Sheets API Authentication
-SCOPE = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-CREDS = ServiceAccountCredentials.from_json_keyfile_name("metal-imprint-453415-q9-b5494fb00c71.json", SCOPE)
-CLIENT = gspread.authorize(CREDS)
+#SCOPE = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+#CREDS = ServiceAccountCredentials.from_json_keyfile_name("metal-imprint-453415-q9-b5494fb00c71.json", SCOPE)
+#CLIENT = gspread.authorize(CREDS)
 
 # Use the spreadsheet key to open the Google Sheet
-SHEET_KEY = "1Ss261Rm7MvZJ_uqN3_tQe9q5uVleF3___qbDxZdyQHQ"
-sheet = CLIENT.open_by_key(SHEET_KEY).sheet1 
+#SHEET_KEY = "1Ss261Rm7MvZJ_uqN3_tQe9q5uVleF3___qbDxZdyQHQ"
+#heet = CLIENT.open_by_key(SHEET_KEY).sheet1 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'a1b2c3d4e5f67890abcdef1234567890'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
@@ -71,7 +71,7 @@ def submit():
             session['sorted_dict'] = {key: value for key, value in sorted(session['response'].items())}
             session['listt'] = [num for sublist in session['sorted_dict'].values() for num in sublist]
             session['listt'].insert(0, current_user.username)
-            sheet.append_row(session['listt'])
+            #sheet.append_row(session['listt'])
             session.pop('response', None)
             session.modified = True  # Ensure session update
         else:
